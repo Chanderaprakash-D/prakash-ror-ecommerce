@@ -1,0 +1,32 @@
+<div style="font-family:Arial; background:#f5f7fb; min-height:100vh; padding:40px;">
+  <h1 style="text-align:center;">My Cart</h1>
+
+  <div style="max-width:900px; margin:auto; background:white; padding:25px; border-radius:15px; box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+    <% total = 0 %>
+
+    <% @cart_items.each do |item| %>
+      <% item_total = item.product.price.to_f * item.quantity.to_i %>
+      <% total += item_total %>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #ddd; padding:15px 0;">
+        <div>
+          <h3><%= item.product.name %></h3>
+          <p>Quantity: <%= item.quantity %></p>
+          <p>Price: ₹<%= item.product.price %></p>
+        </div>
+
+        <div>
+          <h3>₹<%= item_total %></h3>
+          <%= button_to "Remove", item, method: :delete, style:"background:#dc2626;color:white;border:0;padding:10px 15px;border-radius:8px;" %>
+        </div>
+      </div>
+    <% end %>
+
+    <h2 style="text-align:right; margin-top:25px;">Total: ₹<%= total %></h2>
+
+    <div style="text-align:right;">
+      <a href="/products" style="background:#2563eb;color:white;padding:12px 18px;border-radius:8px;text-decoration:none;">Continue Shopping</a>
+      <a href="/orders/new" style="background:#16a34a;color:white;padding:12px 18px;border-radius:8px;text-decoration:none;margin-left:10px;">Checkout</a>
+    </div>
+  </div>
+</div>

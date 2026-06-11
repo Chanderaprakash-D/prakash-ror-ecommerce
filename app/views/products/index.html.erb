@@ -1,0 +1,49 @@
+<h1>Prakash E-Commerce Store</h1>
+
+<form method="get" action="/products">
+  <input type="text" name="search" placeholder="Search products" value="<%= params[:search] %>">
+
+  <select name="category_id">
+    <option value="">All Categories</option>
+    <% @categories.each do |category| %>
+      <option value="<%= category.id %>" <%= "selected" if params[:category_id] == category.id.to_s %>>
+        <%= category.name %>
+      </option>
+    <% end %>
+  </select>
+
+  <input type="number" name="min_price" placeholder="Min price" value="<%= params[:min_price] %>">
+  <input type="number" name="max_price" placeholder="Max price" value="<%= params[:max_price] %>">
+
+  <button type="submit">Filter</button>
+  <a href="/products">Clear</a>
+</form>
+
+<br>
+
+<a href="/products/new">Add New Product</a>
+
+<hr>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+  <% @products.each do |product| %>
+    <div style="border: 1px solid #ddd; padding: 15px; width: 250px; border-radius: 10px;">
+      <img src="<%= product.image_url %>" style="width: 100%; height: 180px; object-fit: cover;">
+
+      <h3><%= product.name %></h3>
+      <p><%= product.description %></p>
+      <p><b>Price:</b> ₹<%= product.price %></p>
+      <p><b>Stock:</b> <%= product.stock %></p>
+      <p><b>Category:</b> <%= product.category&.name %></p>
+
+      <% if product.stock.to_i > 0 %>
+        <p style="color: green;"><b>In Stock</b></p>
+      <% else %>
+        <p style="color: red;"><b>Out of Stock</b></p>
+      <% end %>
+
+      <%= link_to "View", product %> |
+      <%= link_to "Edit", edit_product_path(product) %>
+    </div>
+  <% end %>
+</div>

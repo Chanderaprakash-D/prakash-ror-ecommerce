@@ -1,0 +1,51 @@
+<div style="min-height: 100vh; background: #f5f7fb; padding: 40px; font-family: Arial, sans-serif;">
+  <div style="max-width: 950px; margin: auto; background: white; border-radius: 18px; box-shadow: 0 8px 25px rgba(0,0,0,0.12); overflow: hidden; display: flex; gap: 30px; padding: 30px;">
+
+    <div style="flex: 1;">
+      <img src="<%= @product.image_url %>" 
+           alt="<%= @product.name %>" 
+           style="width: 100%; height: 420px; object-fit: contain; border-radius: 14px; background: #f1f1f1;">
+    </div>
+
+    <div style="flex: 1;">
+      <h1 style="font-size: 36px; margin-bottom: 10px; color: #222;"><%= @product.name %></h1>
+
+      <p style="font-size: 17px; color: #555; line-height: 1.7;">
+        <%= @product.description %>
+      </p>
+
+      <h2 style="font-size: 30px; color: #0a7c3b;">
+        ₹<%= @product.price %>
+      </h2>
+
+      <p style="font-size: 18px;">
+        <b>Stock:</b> <%= @product.stock %>
+      </p>
+
+      <p style="font-size: 18px;">
+        <b>Category:</b> <%= @product.category&.name %>
+      </p>
+
+      <% if @product.stock.to_i > 0 %>
+        <p style="color: green; font-weight: bold; font-size: 18px;">Available in Stock</p>
+      <% else %>
+        <p style="color: red; font-weight: bold; font-size: 18px;">Out of Stock</p>
+      <% end %>
+
+      <%= button_to "Add to Cart",
+    cart_items_path(cart_item: { product_id: @product.id, quantity: 1 }),
+    method: :post,
+    style: "background:#f97316; color:white; padding:12px 18px; border:0; border-radius:8px; cursor:pointer; margin-top:15px;" %>
+
+      <div style="margin-top: 30px;">
+        <%= link_to "Edit Product", edit_product_path(@product), style: "background:#2563eb; color:white; padding:12px 18px; border-radius:8px; text-decoration:none;" %>
+
+        <%= link_to "Back to Products", products_path, style: "margin-left:10px; background:#111827; color:white; padding:12px 18px; border-radius:8px; text-decoration:none;" %>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <%= button_to "Delete Product", @product, method: :delete, style: "background:#dc2626; color:white; padding:12px 18px; border:0; border-radius:8px; cursor:pointer;" %>
+      </div>
+    </div>
+  </div>
+</div>

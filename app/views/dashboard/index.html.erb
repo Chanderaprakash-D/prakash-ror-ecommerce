@@ -1,0 +1,32 @@
+<div style="font-family: Arial, sans-serif; background:#f5f7fb; min-height:100vh; padding:30px;">
+  <h1 style="text-align:center;">Prakash E-Commerce Dashboard</h1>
+  <p style="text-align:center; color:#555;">Manage products, categories, customers and orders</p>
+
+  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-top:30px;">
+    <div style="background:white; padding:25px; width:200px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+      <h3>Total Products</h3>
+      <h1><%= @total_products %></h1>
+    </div>
+
+    <div style="background:white; padding:25px; width:200px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+      <h3>Categories</h3>
+      <h1><%= @total_categories %></h1>
+    </div>
+
+    <div style="background:white; padding:25px; width:200px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+      <h3>Customers</h3>
+      <h1><%= @total_customers %></h1>
+    </div>
+
+    <div style="background:white; padding:25px; width:200px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+      <h3>Orders</h3>
+      <h1><%= @total_orders %></h1>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:40px;">
+    <a href="/products" style="background:#2563eb; color:white; padding:14px 22px; border-radius:8px; text-decoration:none;">View Products</a>
+    <a href="/categories" style="background:#16a34a; color:white; padding:14px 22px; border-radius:8px; text-decoration:none; margin-left:10px;">Manage Categories</a>
+    <a href="/orders" style="background:#9333ea; color:white; padding:14px 22px; border-radius:8px; text-decoration:none; margin-left:10px;">Orders</a>
+  </div>
+</div>

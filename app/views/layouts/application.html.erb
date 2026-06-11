@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PrakashRorEcommerce</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+  <nav style="background:#111827; padding:16px 30px; font-family:Arial;">
+  <a href="/" style="color:white; font-size:22px; font-weight:bold; text-decoration:none;">Prakash Store</a>
+
+  <span style="float:right;">
+    <a href="/" style="color:white; margin-right:20px; text-decoration:none;">Dashboard</a>
+    <a href="/products" style="color:white; margin-right:20px; text-decoration:none;">Products</a>
+    <a href="/categories" style="color:white; margin-right:20px; text-decoration:none;">Categories</a>
+    <a href="/customers" style="color:white; margin-right:20px; text-decoration:none;">Customers</a>
+    <a href="/cart_items" style="color:white; margin-right:20px; text-decoration:none;">Cart</a>
+    <a href="/orders" style="color:white; text-decoration:none;">Orders</a>
+  </span>
+</nav>
+  <%= yield %>
+  </body>
+</html>
