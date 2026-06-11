@@ -1,24 +1,28 @@
-# README
+# Prakash ROR Ecommerce
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails E-Commerce Application
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Products
+- Categories
+- Customers
+- Orders
+- Shopping Cart
+- Search
+- Filters
+- Dashboard
 
-* System dependencies
+## Tech Stack
 
-* Configuration
+- Ruby on Rails 7
+- SQLite (Local)
+- MySQL RDS (AWS)
+- Docker
+- ECS EC2
+- ECR
+- CodePipeline
 
-* Database creation
+## Author
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Chanderaprakash D
