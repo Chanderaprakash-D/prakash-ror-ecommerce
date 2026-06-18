@@ -1,0 +1,8 @@
+{
+  "containerOverrides": [
+    {
+      "name": "prakash-ror-finaltask-ecommerce-container",
+      "command": ["bundle", "exec", "rails", "db:migrate"]
+    }
+  ]
+}
