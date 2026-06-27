@@ -1,0 +1,17 @@
+{
+  "logs": {
+    "logs_collected": {
+      "files": {
+        "collect_list": [
+          {
+            "file_path": "/app/log/production.log",
+            "log_group_name": "/ecs/prakash-ror-finaltask-ecommerce-agent",
+            "log_stream_name": "ecs/rails-app/{instance_id}",
+            "timezone": "UTC"
+          }
+        ]
+      }
+    },
+    "force_flush_interval": 5
+  }
+}
