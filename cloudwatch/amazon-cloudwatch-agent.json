@@ -6,8 +6,17 @@
           {
             "file_path": "/app/log/production.log",
             "log_group_name": "/ecs/prakash-ror-finaltask-ecommerce-agent",
-            "log_stream_name": "ecs/rails-app/{instance_id}",
-            "timezone": "UTC"
+            "log_stream_name": "rails-production-log"
+          },
+          {
+            "file_path": "/app/log/puma.log",
+            "log_group_name": "/ecs/prakash-ror-finaltask-ecommerce-agent",
+            "log_stream_name": "puma-log"
+          },
+          {
+            "file_path": "/app/log/error.log",
+            "log_group_name": "/ecs/prakash-ror-finaltask-ecommerce-agent",
+            "log_stream_name": "error-log"
           }
         ]
       }
