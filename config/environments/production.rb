@@ -82,11 +82,14 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
-    logger           = ActiveSupport::Logger.new(STDOUT)
-    logger.formatter = config.log_formatter
-    config.logger    = ActiveSupport::TaggedLogging.new(logger)
-  end
+  log_file = File.open(Rails.root.join("log", "production.log"), "a")
+  log_file.sync = true
+
+  logger = ActiveSupport::Logger.new(log_file)
+  logger.formatter = config.log_formatter
+
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
+  config.log_level = :info
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false

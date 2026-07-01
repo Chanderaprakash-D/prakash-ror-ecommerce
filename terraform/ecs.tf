@@ -142,7 +142,7 @@ resource "aws_ecs_task_definition" "app" {
         },
         {
           name  = "RAILS_LOG_TO_STDOUT"
-          value = "true"
+          value = "false"
         }
       ]
 
